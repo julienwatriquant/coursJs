@@ -35,28 +35,61 @@ questionContainer.addEventListener('click', () => {
     
 });
 btn1.addEventListener("click", () => {
-    reponse.style.visibility = "visible";
+    reponse.classList.toggle("show-response");
+    
     reponse.style.backgroundColor = "green";
 });
 
 btn2.addEventListener("click", () =>{
-    reponse.style.visibility = "visible";
+    reponse.classList.toggle("show-response");
     reponse.style.backgroundColor = "red";
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(reponse);
 
 //----------------------------------------------------------------------------------------------------------------
+
+// MouseMove
+// Mouse Events    évenements de la souris. Nous allons créer un effet
+const mousemove = document.querySelector(".mouseMove");
+// console.log(mousemove);
+
+// on pointe sur la class mouseMove et l'on voit que nous sommes sur notre div mouseMove
+// on verifis avec un console.log()
+//console.log(mousemove);
+//    window est un objet au dessus du DOM , il représente votre fenetre 
+window.addEventListener("mousemove", (e) =>{
+  //  console.log(e.target);  //(e) pour event permet de lister tous les parametres de l'événement "mousemove" et d'ajouter le parametres target qui nous permet de cibler tout le DOM 
+
+    // ajout de style
+    
+     mousemove.style.left = e.pageX + "px";
+      mousemove.style.top = e.pageY + "px";
+});
+
+window.addEventListener("mousedown", () =>{
+      mousemove.style.transform = "scale(2)  translate( -25%, -25%)";
+});
+
+// window.addEventListener("mouseup", () =>{
+//        mousemove.style.transform = "scale(1)  translate( -50%, -50%)";
+//        mousemove.style.border = "2px solid teal";
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

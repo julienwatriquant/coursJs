@@ -97,6 +97,44 @@ questionContainer.addEventListener("mouseout", () =>{
 reponse.addEventListener("mouseover", () =>{
       reponse.style.transform = "rotate(2deg)";
 });
+//--------------------------------------------------------------------------------------------------------------------  evenement qui réagit avec les touches de clavier
+// keyPress event 
+// création d'une constante keypressContainer qui pointe sur la div keypress box
+const keypressContainer = document.querySelector(".keypress");
+// console.log(keypressContainer);
+
+// création d'une constante key qui pointe sur le <span> avec l'id key
+const key = document.getElementById("key");
+
+// création d'une fonction pour lire le son mp3
+// cette fonction permet d'emettre un son de sonnette a chaque fois que l'on presse une touche
+const ring = () => {
+    const audio = new Audio();
+  //  console.log(Audio);
+    
+    audio.src ="./sonnette.mp3";
+   // console.log(audio.src);
+    
+    audio.play();
+}
+
+// (e) pour voir les events et les éléments de l'event keypress
+document.addEventListener("keypress", (e) =>{
+    // textContent permet d'écrire du texte et e.key pointe sur l'élément key de keypress ce qui permet d'afficher la lettre ou la touche du clavier
+    key.textContent = e.key;
+    // condition en fonction de la lettre la couleur de la div keypress change
+    if(e.key === "g"){
+        keypressContainer.style.backgroundColor = "red";
+    }else if(e.key === "f"){
+        keypressContainer.style.backgroundColor = "blue";
+    }else{
+        keypressContainer.style.backgroundColor = "purple";
+    }
+    // execution de la fonction ring() 
+    // ring();
+ // fonction ring mit en commentaires pour eviter le son de la sonnette   
+});
+
 
 
 

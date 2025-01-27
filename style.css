@@ -25,9 +25,9 @@ p{
 }
 
 .question-click{
-    background-color: black;
     border-radius: 30px;
     border: 6px dashed pink;
+    height: 40%;
 }
 .show-response{
     visibility: visible;

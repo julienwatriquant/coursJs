@@ -67,13 +67,36 @@ window.addEventListener("mousemove", (e) =>{
 });
 
 window.addEventListener("mousedown", () =>{
-      mousemove.style.transform = "scale(2)  translate( -25%, -25%)";
+    //  console.log("test");
+      
+      mousemove.style.transform = "scale(2)  translate( -25%, -25%)";  // rappel de la translate
+    //  questionContainer.style.backgroundColor = "black";
 });
 
-// window.addEventListener("mouseup", () =>{
-//        mousemove.style.transform = "scale(1)  translate( -50%, -50%)";
-//        mousemove.style.border = "2px solid teal";
-// });
+window.addEventListener("mouseup", () =>{
+       mousemove.style.transform = "scale(1)  translate( -50%, -50%)";
+       mousemove.style.border = "2px solid teal";
+     //  questionContainer.style.backgroundColor = "black";
+});
+
+    // ajout d'un effet rouge quand la souris va sur questionContainer
+questionContainer.addEventListener("mouseenter", () =>{
+      questionContainer.style.backgroundColor = "red";
+});
+
+ // ajout d'un effet rose quand la souris va sur questionContainer
+questionContainer.addEventListener("mouseout", () =>{
+      //  console.log("mouseout");
+
+      questionContainer.style.backgroundColor = "pink";
+        
+});
+
+// effet sur <p> sur const reponse  effet d'inclinaison de la reponse
+
+reponse.addEventListener("mouseover", () =>{
+      reponse.style.transform = "rotate(2deg)";
+});
 
 
 

@@ -98,7 +98,7 @@ reponse.addEventListener("mouseover", () =>{
       reponse.style.transform = "rotate(2deg)";
 });
 //--------------------------------------------------------------------------------------------------------------------  evenement qui réagit avec les touches de clavier
-// keyPress event 
+                  // keyPress event 
 // création d'une constante keypressContainer qui pointe sur la div keypress box
 const keypressContainer = document.querySelector(".keypress");
 // console.log(keypressContainer);
@@ -133,6 +133,60 @@ document.addEventListener("keypress", (e) =>{
     // execution de la fonction ring() 
     // ring();
  // fonction ring mit en commentaires pour eviter le son de la sonnette   
+});
+
+/*   ----------------------------------------------------------------------------
+                           Scroll Event
+        événement sur le scroll
+*/
+
+const nav = document.querySelector("nav");
+ //console.log(nav);
+
+ window.addEventListener("scroll", () =>{
+   // console.log(e);
+ // console.log(window.scrollY); // avec scrollY nous avons la valeur en pixel de notre scroll
+   
+   // faire une condition : si window.scrollY superieur a 120 pixel alors j'aimerais voir la nav . celle ci qui en css est a -50px  changera en 0px
+   
+   if(window.scrollY > 120){
+    nav.style.top = 0;
+   }else{
+    nav.style.top = "-50px";
+   }
+    
+ });
+
+ /* événement sur un input du formulaire ajouté sur index.html 
+                 Form Event    */
+// nous declarons toujours les constantes en premier ensuite les variables et apres les fonctions 
+const form = document.querySelector("form");
+// console.log(form);
+
+// création d'une constante inputName qui pointe sur l'input
+const inputName = document.querySelector("input[type = text]");
+ console.log(inputName);
+
+ const select = document.querySelector("select");
+ let pseudo = "";
+ let language = "";
+// ajout d'un evenement : 
+//  inputName.addEventListener("input", (e) =>{
+//     // console.log(e) permet de voir tous les elements liés a l'évenement
+
+//     // permet de pointer sur l'élément target et de pointer ensuite sur value pour voir ce que l'on a saisi dans <input>
+//     console.log(e.target.value);
+    
+//  });
+     // événement pour recuperer le pseudo
+     // il suffira de taper un console.log(pseudo) pour voir apparaitre la value dans le terminal
+inputName.addEventListener("input", (e) =>{
+    pseudo = e.target.value;
+});
+       // événement pour recuperer le language
+       // il suffira de taper un console.log(planguage) pour voir apparaitre la value dans le terminal
+select.addEventListener("input", (e) =>{
+    language = e.target.value;
 });
 
 
